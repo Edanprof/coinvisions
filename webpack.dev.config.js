@@ -48,10 +48,10 @@ module.exports = {
       },
     ]
   },
-  devServer: {
-    host: '0.0.0.0',
-    hot: true,
-    port: '3001',
-    contentBase: path.join(__dirname, 'public'),
-  }
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ]
 };
